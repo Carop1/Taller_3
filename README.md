@@ -1257,5 +1257,5 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
 
 # DER
 
-![123456789](DER_Taller_3.png)
+![123456789](123456789.png)
 
