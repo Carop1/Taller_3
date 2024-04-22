@@ -528,7 +528,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
    WHERE u.pais = 'España';
    ```
 
-   ![image-20240421083945870]
+   ![image-20240421083945870](image-20240421083945870.png)
 
 3. ```sql
    SELECT e.nombre_ID, ne.nombre, ne.apellido1, ne.apellido2, e.email
@@ -536,7 +536,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
    WHERE e.codigo_jefe = 7;
    ```
 
-   ![image-20240421084924774]
+   ![image-20240421084924774](image-20240421084924774.png)
 
 4. ```sql
    SELECT e.puesto, ne.nombre, ne.apellido1, ne.apellido2, e.email
@@ -545,7 +545,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
    WHERE e.codigo_empleado = e.codigo_jefe;
    ```
 
-   ![image-20240421085358510]
+   ![image-20240421085358510](image-20240421085358510.png)
 
 5. ```sql
    SELECT ne.nombre, ne.apellido1, ne.apellido2, e.puesto
@@ -554,7 +554,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
    WHERE e.puesto <> 'Sales Representative';
    ```
 
-   ![image-20240421090513731]
+   ![image-20240421090513731](image-20240421090513731.png)
 
 6. ```sql
    SELECT c.nombre_cliente
@@ -563,14 +563,14 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
    WHERE u.pais = 'España';
    ```
 
-   ![image-20240421090711890]
+   ![image-20240421090711890](image-20240421090711890.png)
 
 7. ```sql
    SELECT DISTINCT estado
    FROM pedido;
    ```
 
-   ![image-20240421090903694]
+   ![image-20240421090903694](image-20240421090903694.png)
 
 8. ```sql
    SELECT DISTINCT codigo_cliente
@@ -578,7 +578,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
    WHERE YEAR(fecha_pago) = 2008;
    ```
 
-   ![image-20240421091224599]
+   ![image-20240421091224599](image-20240421091224599.png)
 
 9. ```sql
    SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega
@@ -586,7 +586,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
    WHERE fecha_entrega > fecha_esperada;
    ```
 
-   ![image-20240421091431756]
+   ![image-20240421091431756](image-20240421091431756.png)
 
 10. ```sql
     SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega
@@ -594,7 +594,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
     WHERE DATEDIFF(fecha_esperada, fecha_entrega) >= 2;
     ```
 
-    ![image-20240421092619760]
+    ![image-20240421092619760](image-20240421092619760.png)
 
     ```sql
     SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega
@@ -609,7 +609,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
     AND estado = 'Rechazado';
     ```
 
-    ![image-20240421092834816]
+    ![image-20240421092834816](image-20240421092834816.png)
 
 12. ```sql
     SELECT codigo_pedido, fecha_entrega
@@ -617,7 +617,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
     WHERE MONTH(fecha_entrega) = 4 AND estado = 'Entregado';
     ```
 
-    ![image-20240421093357349](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421093357349.png)
+    ![image-20240421093357349](image-20240421093357349.png)
 
 13. ```sql
     SELECT codigo_cliente, forma_pago, id_transaccion, fecha_pago, total
@@ -626,14 +626,14 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
     ORDER BY total DESC;
     ```
 
-    ![image-20240421093759039](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421093759039.png)
+    ![image-20240421093759039](image-20240421093759039.png)
 
 14. ```sql
     SELECT DISTINCT forma_pago
     FROM pago;
     ```
 
-    ![image-20240421093958188](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421093958188.png)
+    ![image-20240421093958188](image-20240421093958188.png)
 
 15. ```sql
     SELECT codigo_producto, nombre, precio_venta
@@ -642,7 +642,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
     ORDER BY precio_venta DESC;
     ```
 
-    ![image-20240421094516006](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421094516006.png)
+    ![image-20240421094516006](image-20240421094516006.png)
 
 16. ```sql
     SELECT c.codigo_cliente, c.nombre_cliente
@@ -653,7 +653,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
     WHERE u.ciudad = 'City 2' AND (e.codigo_empleado = 2 OR e.codigo_empleado = 4);
     ```
 
-    ![image-20240421094820412](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421094820412.png)
+    ![image-20240421094820412](image-20240421094820412.png)
 
     ### Consultas multitabla (Composición interna)
 
@@ -667,7 +667,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        INNER JOIN `nombre empleado` ne ON e.nombre_ID = ne.nombre_ID;
        ```
 
-       ![image-20240421100840629](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421100840629.png)
+       ![image-20240421100840629](image-20240421100840629.png)
 
     3. ```sql
        SELECT c.nombre_cliente, ne.nombre, ne.apellido1
@@ -678,7 +678,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        WHERE p.codigo_cliente IS NULL;
        ```
 
-       ![image-20240421174908388](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421174908388.png)
+       ![image-20240421174908388](image-20240421174908388.png)
 
     4. ```sql
        SELECT c.nombre_cliente, ne.nombre AS nombre_representante, u.ciudad
@@ -689,7 +689,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        INNER JOIN `nombre empleado` ne ON e.nombre_ID = ne.nombre_ID;
        ```
 
-       ![image-20240421175116494](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421175116494.png)
+       ![image-20240421175116494](image-20240421175116494.png)
 
     5. ```sql
        SELECT c.nombre_cliente, ne.nombre AS nombre_representante, u.ciudad
@@ -701,7 +701,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        WHERE p.codigo_cliente IS NULL;
        ```
 
-       ![image-20240421175323935](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421175323935.png)
+       ![image-20240421175323935](image-20240421175323935.png)
 
     6. ```sql
        SELECT DISTINCT u.ubicacion_oficina, u.ciudad, u.region, u.codigo_postal, u.pais
@@ -711,7 +711,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        WHERE u.ciudad = 'Fuenlabrada';
        ```
 
-       ![image-20240421175535529](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421175535529.png)
+       ![image-20240421175535529](image-20240421175535529.png)
 
     7. ```sql
        SELECT c.nombre_cliente, CONCAT(ne.nombre, ' ', ne.apellido1) AS nombre_representante, u.ciudad AS ciudad_oficina
@@ -722,7 +722,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        JOIN ubicacion u ON e.codigo_oficina = u.ubicacion_oficina;
        ```
 
-       ![image-20240421180101273](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421180101273.png)
+       ![image-20240421180101273](image-20240421180101273.png)
 
     8. ```sql
        SELECT e1.nombre_ID AS id_empleado, CONCAT(ne1.nombre, ' ', ne1.apellido1) AS nombre_empleado,
@@ -733,7 +733,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        JOIN `nombre empleado` ne2 ON e2.nombre_ID = ne2.nombre_ID;
        ```
 
-       ![image-20240421180419807](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421180419807.png)
+       ![image-20240421180419807](image-20240421180419807.png)
 
     9. ```sql
        SELECT e1.codigo_empleado,
@@ -748,7 +748,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        JOIN `nombre empleado`ne3 ON e3.nombre_ID = ne3.nombre_ID;
        ```
 
-       ![image-20240421181137148](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421181137148.png)
+       ![image-20240421181137148](image-20240421181137148.png)
 
     10. ```sql
         SELECT c.nombre_cliente
@@ -757,7 +757,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
         WHERE p.fecha_entrega > p.fecha_esperada;		
         ```
 
-        ![image-20240421181328835](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421181328835.png)
+        ![image-20240421181328835](image-20240421181328835.png)
 
     11. ```sql
         SELECT c.nombre_cliente, p.gama
@@ -768,7 +768,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
         GROUP BY c.nombre_cliente, p.gama;
         ```
 
-        ![image-20240421181930657](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421181930657.png)
+        ![image-20240421181930657](image-20240421181930657.png)
 
     ### Consultas multitabla (Composición externa)
 
@@ -779,7 +779,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        WHERE p.codigo_cliente IS NULL;
        ```
 
-       ![image-20240421184327303](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421184327303.png)
+       ![image-20240421184327303](image-20240421184327303.png)
 
     2. ```sql
        SELECT c.nombre_cliente
@@ -788,7 +788,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        WHERE p.codigo_pedido IS NULL;
        ```
 
-       ![image-20240421184456331](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421184456331.png)
+       ![image-20240421184456331](image-20240421184456331.png)
 
     3. ```sql
        SELECT c.nombre_cliente
@@ -856,7 +856,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        WHERE dp.codigo_pedido IS NULL;
        ```
 
-       ![image-20240421190346895](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421190346895.png)
+       ![image-20240421190346895](image-20240421190346895.png)
 
     9. ```sql
        SELECT p.nombre, p.descripcion, p.imagen
@@ -915,7 +915,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        FROM empleado;
        ```
 
-       ![image-20240421191100988](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421191100988.png)
+       ![image-20240421191100988](image-20240421191100988.png)
 
     2. ```sql
        SELECT u.pais, COUNT(c.codigo_cliente) AS total_clientes
@@ -925,7 +925,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        GROUP BY u.pais;
        ```
 
-       ![image-20240421191237077](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421191237077.png)
+       ![image-20240421191237077](image-20240421191237077.png)
 
     3. ```sql
        SELECT AVG(total) AS pago_medio_2024
@@ -933,7 +933,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        WHERE YEAR(fecha_pago) = 2024;
        ```
 
-       ![image-20240421191419917](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421191419917.png)
+       ![image-20240421191419917](image-20240421191419917.png)
 
     4. ```sql
        SELECT estado, COUNT(codigo_pedido) AS numero_pedidos
@@ -942,21 +942,21 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        ORDER BY COUNT(codigo_pedido) DESC;
        ```
 
-       ![image-20240421191558520](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421191558520.png)
+       ![image-20240421191558520](image-20240421191558520.png)
 
     5. ```sql
        SELECT MAX(precio_venta) AS precio_mas_caro, MIN(precio_venta) AS precio_mas_barato
        FROM producto;
        ```
 
-       ![image-20240421191806022](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421191806022.png)
+       ![image-20240421191806022](image-20240421191806022.png)
 
     6. ```sql
        SELECT COUNT(codigo_cliente) AS total_clientes
        FROM cliente;
        ```
 
-       ![image-20240421191947909](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421191947909.png)
+       ![image-20240421191947909](image-20240421191947909.png)
 
     7. ```sql
        SELECT COUNT(codigo_cliente) AS total_clientes_madrid
@@ -965,7 +965,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        WHERE direccion_ID.ciudad = 'Madrid';
        ```
 
-       ![image-20240421192109678](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421192109678.png)
+       ![image-20240421192109678](image-20240421192109678.png)
 
     8. ```sql
        SELECT SUBSTRING(ciudad, 1, 1) AS primera_letra_ciudad, COUNT(codigo_cliente) AS total_clientes
@@ -982,7 +982,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
        GROUP BY ne.nombre;
        ```
 
-       ![image-20240421192626960](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421192626960.png)
+       ![image-20240421192626960](image-20240421192626960.png)
 
     10. ```sql
         SELECT COUNT(*) AS total_clientes_sin_representante
@@ -990,7 +990,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
         WHERE codigo_emp_rep_ventas IS NULL;
         ```
 
-        ![image-20240421192756229](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421192756229.png)
+        ![image-20240421192756229](image-20240421192756229.png)
 
     11. ```sql
         SELECT 
@@ -1009,7 +1009,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
             c.codigo_cliente;
         ```
 
-        ![image-20240421192940241](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421192940241.png)
+        ![image-20240421192940241](image-20240421192940241.png)
 
     12. ```sql
         SELECT 
@@ -1031,7 +1031,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
             codigo_pedido;
         ```
 
-        ![image-20240421193311500](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421193311500.png)
+        ![image-20240421193311500](image-20240421193311500.png)
 
     14. ```sql
         SELECT 
@@ -1049,7 +1049,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
         LIMIT 2;
         ```
 
-        ![image-20240421193515611](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421193515611.png)
+        ![image-20240421193515611](image-20240421193515611.png)
 
     15. ```sql
         SELECT 
@@ -1070,7 +1070,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
         ) AS subquery;
         ```
 
-        ![image-20240421193737877](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421193737877.png)
+        ![image-20240421193737877](image-20240421193737877.png)
 
     16. ```sql
         SELECT 
@@ -1086,7 +1086,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
             dp.codigo_producto;
         ```
 
-        ![image-20240421193906226](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421193906226.png)
+        ![image-20240421193906226](image-20240421193906226.png)
 
     17. ```sql
         SELECT 
@@ -1104,7 +1104,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
             dp.codigo_producto;
         ```
 
-        ![image-20240421194045690](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421194045690.png)
+        ![image-20240421194045690](image-20240421194045690.png)
 
     18. ```sql
         SELECT 
@@ -1122,7 +1122,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
             total_facturado_con_iva > 3000;
         ```
 
-        ![image-20240421194221266](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421194221266.png)
+        ![image-20240421194221266](image-20240421194221266.png)
 
     19. ```sql
         SELECT 
@@ -1134,7 +1134,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
             YEAR(fecha_pago);
         ```
 
-        ![image-20240421194347840](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421194347840.png)
+        ![image-20240421194347840](image-20240421194347840.png)
 
         
 
@@ -1152,7 +1152,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
            c.nombre_cliente;
        ```
 
-       ![image-20240421194538858](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421194538858.png)
+       ![image-20240421194538858](image-20240421194538858.png)
 
     2. ```sql
        SELECT 
@@ -1166,7 +1166,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
            c.nombre_cliente;
        ```
 
-       ![image-20240421194728172](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421194728172.png)
+       ![image-20240421194728172](image-20240421194728172.png)
 
     3. ```sql
        SELECT DISTINCT 
@@ -1181,7 +1181,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
            c.nombre_cliente ASC;
        ```
 
-       ![image-20240421194859856](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421194859856.png)
+       ![image-20240421194859856](image-20240421194859856.png)
 
     4. ```sql
        SELECT 
@@ -1218,7 +1218,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
            ubicacion u ON o.ubicacion_ID = u.ubicacion_oficina;
        ```
 
-       ![image-20240421200023494](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421200023494.png)
+       ![image-20240421200023494](image-20240421200023494.png)
 
     6. ```sql
        SELECT 
@@ -1251,11 +1251,11 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
            u.ciudad;
        ```
 
-       ![image-20240421200335162](C:\Users\USUARIO\AppData\Roaming\Typora\typora-user-images\image-20240421200335162.png)
+       ![image-20240421200335162](image-20240421200335162.png)
 
        
 
 # DER
 
-![123456789](C:\Users\USUARIO\Desktop\DER_Taller_3.png)
+![123456789](DER_Taller_3.png)
 
