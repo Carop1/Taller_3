@@ -518,7 +518,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `descripcion`, `can
 
    
 
-![image-20240421083545161]
+![image-20240421083545161](image-20240421083545161.png)
 
 2. ```sql
    SELECT u.ciudad, t.telefono1
